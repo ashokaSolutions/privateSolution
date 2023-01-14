@@ -3,9 +3,9 @@ class helloworld{
         System.out.println("hello worldls");
         int a=5;
    	
-	a++;
+	    a++;
 	    
-	System.out.print(a);
+	    System.out.print(a);
 
 	//hello world i am here
     }
