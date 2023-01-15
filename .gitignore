@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 logs/
 *.log
 
@@ -80,3 +81,23 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+=======
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Other files and folders
+.settings/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+>>>>>>> b724d470fb22497af9809d139088b520eac185cc
