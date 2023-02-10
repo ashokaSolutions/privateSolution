@@ -1,7 +1,21 @@
 package com.sumedhTYBSC.project.sumedhTyProject;
 
+import javax.validation.constraints.NotEmpty;
+import java.lang.annotation.Native;
+
 public class Photo {
     private String id;
+
+    @NotEmpty
+    private byte[] data;
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 
     private String fileName;
 
