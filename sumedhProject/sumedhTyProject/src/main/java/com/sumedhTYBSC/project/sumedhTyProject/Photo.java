@@ -9,6 +9,10 @@ public class Photo {
     @NotEmpty
     private byte[] data;
 
+    public Photo() {
+
+    }
+
     public byte[] getData() {
         return data;
     }

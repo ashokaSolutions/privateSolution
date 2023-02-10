@@ -3,12 +3,11 @@ package com.sumedhTYBSC.project.sumedhTyProject;
 import org.springframework.data.relational.core.sql.In;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.*;
 
@@ -58,8 +57,15 @@ public class PhotoController {
         return new ResponseEntity<>( HttpStatus.NOT_FOUND);
     }
 
-
+    @PostMapping("/photo")
+    Photo save(@RequestPart("data")MultipartFile file) throws IOException {
+        Photo photo=new Photo();
+        photo.setId(UUID.randomUUID().toString());
+        photo.setData(file.getBytes());
+        photo.setFileName(photo.getFileName());
+        photoService.put(photo.getId(),photo);
+        return photo;
+    }
 }
 /*
-    Getmapping gets the page entered
- */
+    Getmapping gets the page entered*/

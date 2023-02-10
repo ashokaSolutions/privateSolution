@@ -24,4 +24,9 @@ public class PhotoService {
     public Photo get(String id) {
         return db.get(id);
     }
+
+
+    public void put(String id,Photo photo) {
+        db.put(id,photo);
+    }
 }
