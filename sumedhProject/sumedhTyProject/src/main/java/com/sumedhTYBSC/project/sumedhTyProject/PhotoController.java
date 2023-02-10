@@ -33,7 +33,7 @@ public class PhotoController {
     }
     @GetMapping("/")
     public String hello(){
-        return "hello there";
+        return "hello there aarti";
     }
 
     //all pics
