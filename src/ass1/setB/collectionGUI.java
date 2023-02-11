@@ -1,6 +1,5 @@
-package ass1.setA.setB;
+package ass1.setB;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -27,17 +26,17 @@ public class collectionGUI {
 
         textArea=new JTextArea();
         textArea.setEditable(false);
-        textArea.setBounds(10,10,70,90);
+        textArea.setBounds(10,10,100,140);
 
-        cityADD.setBounds(100,10,75,20);
-        codeADD.setBounds(180,10,75,20);
+        cityADD.setBounds(150,10,90,20);
+        codeADD.setBounds(245,10,90,20);
 
-        cityRemove.setBounds(100,60,75,20);
-        citySearch.setBounds(180,60,75,20);
+        cityRemove.setBounds(150,60,90,20);
+        citySearch.setBounds(245,60,90,20);
 
-        add.setBounds(130,35,60,20);
-        search.setBounds(100,80,60,20);
-        remove.setBounds(160,80,60,20);
+        add.setBounds(190,35,90,20);
+        search.setBounds(150,80,90,20);
+        remove.setBounds(245,80,90,20);
 
         frame.add(textArea);
         frame.add(cityADD);
@@ -50,7 +49,7 @@ public class collectionGUI {
 
         actions();
 
-        frame.setSize(300,300);
+        frame.setSize(400,400);
         frame.setLayout(null);
         frame.setVisible(true);
     }
@@ -59,7 +58,8 @@ public class collectionGUI {
         add.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(cityADD.getText()=="" || codeADD.getText()==""){
+                textArea.setText("");
+                if(cityADD.getText()=="" || codeADD.getText()=="" ){
                     textArea.setText("please provide input");
                 }else{
 
