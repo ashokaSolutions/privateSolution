@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Movies>
+    <MovieInfo>
+        <MovieNo>1</MovieNo>
+        <MovieTitle>The Godfather</MovieTitle>
+        <ActorName>Marlon Brando</ActorName>
+        <ReleaseYear>1972</ReleaseYear>
+    </MovieInfo>
+    <MovieInfo>
+        <MovieNo>2</MovieNo>
+        <MovieTitle>The Shawshank Redemption</MovieTitle>
+        <ActorName>Tim Robbins</ActorName>
+        <ReleaseYear>1994</ReleaseYear>
+    </MovieInfo>
+    <MovieInfo>
+        <MovieNo>3</MovieNo>
+        <MovieTitle>The Dark Knight</MovieTitle>
+        <ActorName>Christian Bale</ActorName>
+        <ReleaseYear>2008</ReleaseYear>
+    </MovieInfo>
+</Movies>
