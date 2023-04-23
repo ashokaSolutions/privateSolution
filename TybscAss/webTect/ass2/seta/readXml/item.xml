@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Items>
+    <Item>
+        <ItemName>Product A</ItemName>
+        <ItemPrice>$10</ItemPrice>
+        <Quantity>100</Quantity>
+    </Item>
+    <Item>
+        <ItemName>Product A</ItemName>
+        <ItemPrice>$10</ItemPrice>
+        <Quantity>100</Quantity>
+    </Item>
+    <Item>
+        <ItemName>Product A</ItemName>
+        <ItemPrice>$10</ItemPrice>
+        <Quantity>100</Quantity>
+    </Item>
+</Items>
