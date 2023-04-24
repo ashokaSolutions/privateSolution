@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+
+            table {
+                border-collapse: collapse;
+              }
+              td, th {
+                border: 1px solid black;
+                padding: 5px;
+              }
+        </style>
+    </head>
+    <body>
+        <script>
+            function onButton(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let contacts = this.responseText;
+                        let arr=contacts.split("\r\n");
+                        let newArr=[];
+                        let i=0;
+                        while(i<arr.length){
+                            newArr.push(arr[i].split(","));
+                            i++;
+                        }
+                        let j=0;
+                        let str="<tr></tr>\n<th>Name</th>\n<th>number</th>\n<tr>\n";
+                        for(i=0;i<newArr.length;i++){
+                            str+="<tr>\n<th>"+newArr[i][j]+"</th>\n<th>"+newArr[i][j+1]+"</th>\n</tr>\n";      
+                        }
+                        document.getElementById("getter").innerHTML="<table>\n"+str+"</table>";
+                    };
+                }
+                xhttp.open("GET", "contacts.dat", true);
+                xhttp.send();
+            }
+        </script>
+        <button type="button" onclick="onButton()">button</button>
+        <p id="getter"></p>
+    </body>
+</html>
