@@ -85,7 +85,7 @@ void createFile(int bit[],int n){
     
 }
 void deleteFile(int bit[]){
-	int start=0,length=0,tempVar;
+	int start=-1,length=-1;
 	char filename[20];
 	printf("\nenter filename to delete:\n");
 	scanf("%s",filename);
@@ -93,30 +93,27 @@ void deleteFile(int bit[]){
 	if(d==NULL)
 		printf("\nerror\n");
 	else{
-		
-		if(strcmp(temp->filename,filename)==0){
-			d=temp->next;
-			temp=NULL;
-		}
-		else{
-			while(temp->next!=NULL){
-				if(temp->filename==filename){
-					start=temp->start;
-					length=temp->len;
-					tempVar=start;
-                	while(tempVar!=(start+length)){
-                        bit[tempVar]=1;
-                        tempVar++;
-                    }
+		while(temp!=NULL){
+			if(strcmp(temp->filename,filename)==0){
+				start=temp->start;
+				length=temp->len;
+				if(temp!=d)
 					prev->next=temp->next;
-					temp=NULL;
-					break;
-				}else{
-					prev=temp;
-					temp=temp->next;
-				}
-			}	
+				else
+					d=temp->next;
+				free(temp);
+				temp=NULL;
+				break;
+			}else{
+				prev=temp;
+				temp=temp->next;
+			}
 		}	
+	}	
+	printf("start:%d\n",start);
+	printf("length:%d\n",length);
+	for(int i=start;i<start+length;i++){
+		bit[i]=1;
 	}
 }
 int main() {
