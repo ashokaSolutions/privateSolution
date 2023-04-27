@@ -31,7 +31,7 @@ void generateBit(int bit[],int n){
 void fileShow(){
     printf("\nFilename\tStart\n");
     temp=head;
-    while(temp){
+    while(temp!=NULL){
         printf("%s\t%d\n",temp->filename,temp->start);
         temp=temp->next;
     }
@@ -49,13 +49,15 @@ void deleteFile(int bit[]){
 	char filename[20],start;
 	printf("enter filename:\n");
 	scanf("%s",filename);
-	head=temp;
+	temp=head;
+	printf("head->%s\n",head->filename);
 	if(head==NULL){
 		printf("dir empty\n");
 	}	
 	else{
 		while(temp!=NULL){
-			if(strcmp(temp->filename,filename)){
+			
+			if(strcmp(temp->filename,filename)==0){
 				start=temp->start;
 				if(temp!=head){
 					prev->next=temp->next;
@@ -67,6 +69,7 @@ void deleteFile(int bit[]){
 				while(bit[i]!=-1){
 					j=bit[i];
 					bit[i]=1;
+					i=j;
 				}			
 				bit[i]=1;	
 				free(temp);
@@ -80,7 +83,7 @@ void deleteFile(int bit[]){
 }
 
 void create(int bit[],int n){
-	char filename[20];
+	char filename[101];
 	int size;
 	int freeBlocks=freeCal(bit,n);
 	printf("enter filename:\n");
@@ -92,38 +95,36 @@ void create(int bit[],int n){
 		return;
 	}	
 	int i;
-	if(head!=NULL)
-		i=0;
-	else
-		i=1;
+	if(head == NULL || head->start!=0){
+    // list is empty
+		i = 0;
+	} else {// list is not empty
+	    i = 1;
+	}
+
 	for(;i<n;i++){
 		if(bit[i]==1){
 			printf("start:%d\n",i);
 			break;
 		}
 	}
-	
-	printf("newnode\n");
 	newnode=(node *)malloc(sizeof(node));
 	strcpy(newnode->filename,filename);
 	newnode->start=i;
 	//linked formed
 	newnode->next=NULL;
-	if(head==NULL){
-		head=last=newnode;
-		printf("\nif->%s\n",head->filename);
-	}else{
-		printf("\nelse->%s\n",head->filename);
-		last->next=newnode;
-		last=last->next;
-	}
-	printf("block contrrol");
+	
+ 		if(head==NULL){
+            last=head=newnode;
+        }else{
+            last->next=newnode;
+            last=last->next;
+        }
 	//block cancel
 	freeBlocks=freeBlocks-size;
 	int front=i+1;
 	while(size>0){
 		if(bit[front]==1){
-			printf("in loop");
 			bit[i]=front;
 			i=front;	
 			size--;
@@ -144,7 +145,7 @@ int main(){
 	showBit(bit,n);
 	int choice;
 	while(1){
-		printf("\n========MENU========\n1)show vector\n2)create\n3)show directory\n45delete\n)exit\nenter choice:\n");
+		printf("\n========MENU========\n1)show vector\n2)create\n3)show directory\n4)delete\n5)exit\nenter choice:\n");
 		scanf("%d",&choice);
 		switch(choice){
 			case 1:showBit(bit,n);
