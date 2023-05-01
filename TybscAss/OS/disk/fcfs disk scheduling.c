@@ -30,4 +30,4 @@ int main(){
 			head=arr[i];
 	}
 	printf("Total seek:%d\n",seek);
-	
+}
