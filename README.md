@@ -1,6 +1,7 @@
 # privateSolution
 
 TYBSC:has os and webtech and now added jsp for java
+
 DSLastSem as da practicals
 
 
