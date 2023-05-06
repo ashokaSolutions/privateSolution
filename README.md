@@ -1,4 +1,12 @@
 # privateSolution
+
+TYBSC:has os and webtech and now added jsp for java
+
+DSLastSem as da practicals
+
+
+
+
 here you can learn to use git 
 
 The main branch is main,master branch is for editing and all.Bascially master branch contains code that are under development.
